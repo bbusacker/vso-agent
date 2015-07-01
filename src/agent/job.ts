@@ -241,7 +241,7 @@ export class JobRunner {
             function (item: ifm.TaskInstance, done: (err: any) => void) {
 
                 jobCtx.writeConsoleSection('Running ' + item.name);
-                var taskCtx: ctxm.TaskContext = new ctxm.TaskContext(jobCtx.jobInfo,
+                var taskCtx: ctxm.TaskContext = new ctxm.TaskContext(job,
                     jobCtx.authHandler,
                     item.instanceId,
                     jobCtx.service,

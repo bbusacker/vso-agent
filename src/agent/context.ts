@@ -429,16 +429,19 @@ export class PluginContext extends ExecutionContext {
 //=================================================================================================
 
 export class TaskContext extends ExecutionContext {
-    constructor(jobInfo: cm.IJobInfo,
+    constructor(job: ifm.JobRequestMessage,
         authHandler: ifm.IRequestHandler,
         recordId: string,
         feedback: cm.IFeedbackChannel,
         workerCtx: WorkerContext) {
 
         this.webapi = wapim;
+        this.job = job;
+        var jobInfo: cm.IJobInfo = cm.jobInfoFromJob(job, authHandler);
         super(jobInfo, authHandler, recordId, feedback, workerCtx);
     }
 
+    public job: ifm.JobRequestMessage;
     public inputs: ifm.TaskInputs;
     public webapi: any;
 }

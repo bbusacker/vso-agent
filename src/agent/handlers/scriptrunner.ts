@@ -69,6 +69,12 @@ export function run(scriptEngine: string, scriptPath: string, taskCtx:ctxm.TaskC
         env[envVarName] = taskCtx.inputs[key];
         _trace.write(envVarName + '=' + env[envVarName]);
     }
+    
+    taskCtx.job.environment.endpoints.forEach(function(endpoint){
+        var envEndpointName = 'ENDPOINT_' + endpoint.name.replace(' ', '_').toUpperCase();
+        env[envEndpointName] = JSON.stringify(endpoint);
+        _trace.write(envEndpointName + '=' + env[envEndpointName]);
+    });
 
     var ops = {
         cwd: process.cwd(),

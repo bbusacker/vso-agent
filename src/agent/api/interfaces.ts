@@ -317,7 +317,7 @@ export interface JobCompletedEvent {
 }
 
 export interface JobEndpoint {
-    authorization: string;
+    authorization: JobConnectionAuthorization;
     data: { [key: string]: string; };
     id: number;
     name: string;
