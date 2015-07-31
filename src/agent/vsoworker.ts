@@ -27,7 +27,7 @@ function setVariables(job: ifm.JobRequestMessage, workerContext: ctxm.WorkerCont
     var workingFolder = workerContext.workFolder;
     var variables = job.environment.variables;
 
-    var sys = variables[cm.sysVars.system];
+    var sys = variables[cm.sysVars.systemHostType];
     var collId = variables[cm.sysVars.collectionId];
 
     if (!variables[cm.sysVars.collectionUri]) {

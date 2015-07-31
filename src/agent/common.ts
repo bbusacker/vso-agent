@@ -19,11 +19,12 @@ var fs = require('fs');
 require('./extensions');
 
 export var sysVars = <any>{};
-sysVars.system = 'system';
+sysVars.systemHostType = 'system.hosttype';
 sysVars.collectionId = 'system.collectionId';
 sysVars.definitionId = 'system.definitionId';
 sysVars.tfsUri = 'system.teamFoundationServerUri';
-sysVars.collectionUri = 'system.teamFoundationCollectionUri'
+sysVars.collectionUri = 'system.teamFoundationCollectionUri';
+sysVars.teamProjectId = 'system.teamProjectId';
 sysVars.debug = 'system.debug';
 
 export var agentVars = <any>{};

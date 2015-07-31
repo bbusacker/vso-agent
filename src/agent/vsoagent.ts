@@ -25,16 +25,16 @@ var SWEEP_LOGS_SECONDS = 43;
 var inDebugger = (typeof global.v8debug === 'object');
 
 var supported = ['darwin', 'linux'];
-if (supported.indexOf(process.platform) == -1) {
-    console.error('Unsupported platform: ' + process.platform);
-    console.error('Supported platforms are: ' + supported.toString());
-    process.exit(1);
-}
+//if (supported.indexOf(process.platform) == -1) {
+//    console.error('Unsupported platform: ' + process.platform);
+//    console.error('Supported platforms are: ' + supported.toString());
+//    process.exit(1);
+//}
 
-if (process.getuid() == 0 && !process.env['VSO_AGENT_RUNASROOT']) {
-    console.error('Agent should not run elevated.  uid: ' + process.getuid());
-    process.exit(1);
-}
+//if (process.getuid() == 0 && !process.env['VSO_AGENT_RUNASROOT']) {
+//    console.error('Agent should not run elevated.  uid: ' + process.getuid());
+//    process.exit(1);
+//}
 
 var ag: ctxm.AgentContext;
 var trace: tm.Tracing;
